@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tails & Trails | Dog Walking & Boarding</title>
+  <meta name="description" content="Tails & Trails provides friendly dog walking and home boarding for happy pups.">
+  <style>
+    :root {
+      --cream: #fbf6ed;
+      --brown: #5a3b24;
+      --green: #687253;
+      --light-green: #e5e8d9;
+      --tan: #d9bd96;
+      --white: #fffdf9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--brown);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,253,249,.96);
+      border-bottom: 1px solid #eadfce;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 6%;
+      backdrop-filter: blur(8px);
+    }
+    .brand { font-weight: 800; letter-spacing: 1px; }
+    nav a {
+      color: var(--brown);
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(180deg, #f7f0e5 0%, var(--cream) 100%);
+    }
+    .hero img {
+      width: min(330px, 75vw);
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1; margin: 0 0 14px; }
+    h2 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 0; }
+    .tagline { font-size: 1.2rem; max-width: 620px; margin: 0 auto 28px; }
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      margin: 5px;
+    }
+    .primary { background: var(--green); color: white; }
+    .secondary { border: 2px solid var(--green); color: var(--green); }
+    section { padding: 75px 6%; max-width: 1100px; margin: auto; }
+    .center { text-align: center; }
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .about-card, .price-card, .contact-card {
+      background: var(--white);
+      border: 1px solid #eadfce;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 25px rgba(90,59,36,.06);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .price-card h3 { margin-top: 0; font-size: 1.35rem; }
+    .price { font-size: 2rem; font-weight: 900; color: var(--green); }
+    ul { padding-left: 20px; }
+    .highlight {
+      background: var(--light-green);
+      border-radius: 28px;
+      padding: 45px;
+    }
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .contact a { color: var(--green); font-weight: 800; }
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: var(--brown);
+      color: white;
+    }
+    .small { font-size: .9rem; opacity: .8; }
+    @media (max-width: 760px) {
+      nav { flex-direction: column; gap: 8px; }
+      nav a { margin: 0 7px; font-size: .85rem; }
+      .about, .contact, .cards { grid-template-columns: 1fr; }
+      section { padding: 55px 6%; }
+      .highlight { padding: 30px 22px; }
+    }
+ .review-form {
+  max-width: 650px;
+  margin: 25px auto;
+  display: grid;
+  gap: 12px;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #eadfce;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.review-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.review-card {
+  background: var(--white);
+  border: 1px solid #eadfce;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 650px;
+}
+
+.review-card h3 {
+  color: var(--green);
+  margin: 0 0 5px;
+}
+ </style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">🐾 TAILS & TRAILS</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#prices">Prices</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <img src="logo.png" alt="Tails & Trails dog walking and sitting logo">
+    <h1>Tails & Trails</h1>
+    <p class="tagline">Happy dogs. Happy owners. Happy trails! 🌿🐾</p>
+    <a class="btn primary" href="#prices">View Prices</a>
+    <a class="btn secondary" href="#contact">Book a Stay</a>
+  </div>
+</header>
+
+<section id="about">
+  <div class="about">
+    <div>
+      <h2>About Us 🐶</h2>
+      <p>
+        At Tails & Trails, we're passionate about giving dogs the love, care and
+        attention they deserve.
+      </p>
+      <p>
+        We offer dog walking and dog boarding for families who want their pets
+        to stay happy, active and cared for while they're busy or away.
+      </p>
+      <p>
+        Every pup is treated with kindness, patience and care, with their
+        safety and happiness always coming first.
+      </p>
+    </div>
+    <div class="about-card">
+      <h3>What your pup can expect</h3>
+      <ul>
+        <li>🐾 Fun walks and exercise</li>
+        <li>🎾 Playtime and attention</li>
+        <li>🥣 Meals following your instructions</li>
+        <li>💧 Fresh water</li>
+        <li>💚 A safe, caring environment</li>
+        <li>📸 Updates for owners when requested</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="center">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="price-card">
+      <h3>🐕 Dog Walking</h3>
+      <p>Fun, supervised walks with plenty of exercise and sniffing time.</p>
+    </div>
+    <div class="price-card">
+      <h3>🏡 Dog Boarding</h3>
+      <p>Your dog stays with us overnight while you are away.</p>
+    </div>
+    <div class="price-card">
+      <h3>☀️ Day Boarding</h3>
+      <p>A fun and caring place for your dog to spend the day.</p>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="highlight">
+    <div class="center">
+      <h2>Our Prices 💰</h2>
+    </div>
+    <div class="cards">
+      <div class="price-card">
+        <h3>30-Minute Walk</h3>
+        <div class="price">$12</div>
+        <p>Additional dog: +$6</p>
+      </div>
+      <div class="price-card">
+        <h3>1-Hour Walk</h3>
+        <div class="price">$20</div>
+        <p>Additional dog: +$10</p>
+      </div>
+      <div class="price-card">
+        <h3>Dog Boarding</h3>
+        <div class="price">$40/night</div>
+        <p>Additional dog from the same family: +$25/night</p>
+      </div>
+<!-- MEMBERSHIP -->
+<div class="price-card membership-card">
+
+  <h3>🐾 Tails & Trails Membership</h3>
+
+  <div class="price">
+    $200<span class="per-month">/month</span>
+  </div>
+
+  <p><strong>Become a Tails & Trails member!</strong></p>
+
+  <p>Your membership includes:</p>
+
+  <ul>
+    <li>🐕 4 × 30-minute dog walks</li>
+    <li>🌿 1 × 60-minute Sunday adventure walk</li>
+    <li>📸 A photo/update after each walk</li>
+    <li>⭐ Priority booking</li>
+    <li>💚 Lots of love, attention and exercise</li>
+  </ul>
+
+  <p class="membership-note">
+    Membership walks must be booked in advance.
+    Unused walks do not roll over to the following month.
+  </p>
+
+  <a
+    class="btn primary"
+    href="mailto:tailsandtrails610@gmail.com?subject=Tails%20%26%20Trails%20Membership%20Enquiry"
+  >
+    Ask About Membership 🐾
+  </a>
+
+</div>
+    </div>
+    <br>
+    <div class="center">
+      <p><strong>Longer stays:</strong> 3 nights — $120 &nbsp; • &nbsp; 7 nights — $270</p>
+      <p><strong>Day boarding:</strong> $20/day</p>
+      <p class="small">Prices can be discussed before booking depending on the number of dogs and their individual care needs.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="center">Let's Meet Your Pup! 🐾</h2>
+  <div class="contact">
+    <div class="contact-card">
+      <h3>Before booking</h3>
+      <p>
+        We'd love to learn about your dog, their routine, what they enjoy,
+        and anything they need while staying with us.
+      </p>
+      <p><strong>Email us to check availability.</strong></p>
+    </div>
+    <div class="contact-card">
+      <h3>Contact</h3>
+      <p>📱 Phone: <em>0484 918 527</em></p>
+      <p>📧 Email: <em>tailsandtrails610@gmail.com</em></p>
+      <p>📍 Location: <em>Depends on sitter</em></p>
+      <a class="btn primary" href="mailto:tailsandtrails610@gmail.com">Email Us</a>
+    </div>
+  </div>
+</section>
+<section id="reviews">
+  <div class="highlight">
+    <h2 class="center">⭐ Reviews</h2>
+    <p class="center">Have we looked after your pup? We'd love to hear what you think! 🐶💚</p>
+
+    <div class="review-form">
+      <input type="text" id="reviewName" placeholder="Your name" maxlength="40">
+
+      <select id="reviewStars">
+        <option value="5">★★★★★ — 5 stars</option>
+        <option value="4">★★★★☆ — 4 stars</option>
+        <option value="3">★★★☆☆ — 3 stars</option>
+        <option value="2">★★☆☆☆ — 2 stars</option>
+        <option value="1">★☆☆☆☆ — 1 star</option>
+      </select>
+
+      <textarea id="reviewText" placeholder="Write your review..." maxlength="300"></textarea>
+
+      <button class="btn primary" onclick="addReview()">Post Review</button>
+    </div>
+
+    <div id="reviewsList"></div>
+  </div>
+</section>
+
+<script>
+function addReview() {
+  const name = document.getElementById("reviewName").value.trim();
+  const stars = document.getElementById("reviewStars").value;
+  const text = document.getElementById("reviewText").value.trim();
+
+  if (!name || !text) {
+    alert("Please enter your name and a review.");
+    return;
+  }
+
+  const review = document.createElement("div");
+  review.className = "review-card";
+
+  review.innerHTML = `
+    <h3>${"★".repeat(stars)}${"☆".repeat(5 - stars)}</h3>
+    <strong>${name}</strong>
+    <p>${text}</p>
+  `;
+
+  document.getElementById("reviewsList").prepend(review);
+
+  document.getElementById("reviewName").value = "";
+  document.getElementById("reviewText").value = "";
+}
+
+</script>
+<section id="booking">
+  <div class="highlight">
+
+    <h2 class="center">📅 Book Your Pup</h2>
+
+    <p class="center">
+      Check our calendar and send us a booking request! 🐶
+    </p>
+
+    <div class="booking-calendar">
+
+      <div class="calendar-header">
+        <button type="button" onclick="changeMonth(-1)">‹</button>
+        <h3 id="monthYear"></h3>
+        <button type="button" onclick="changeMonth(1)">›</button>
+      </div>
+
+      <div class="weekdays">
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+      </div>
+
+      <div id="calendar" class="calendar-grid"></div>
+
+      <div class="calendar-key">
+        <span>🟢 Available</span>
+        <span>🔴 Booked</span>
+      </div>
+
+    </div>
+
+    <div class="booking-form">
+
+      <h3>🐾 Booking Request</h3>
+
+      <form onsubmit="sendBooking(event)">
+
+        <label>Your name</label>
+        <input
+          type="text"
+          id="customerName"
+          required
+          placeholder="Your name"
+        >
+
+        <label>Phone number</label>
+        <input
+          type="tel"
+          id="customerPhone"
+          required
+          placeholder="Your phone number"
+        >
+
+        <label>Email</label>
+        <input
+          type="email"
+          id="customerEmail"
+          required
+          placeholder="Your email"
+        >
+
+        <label>Dog's name</label>
+        <input
+          type="text"
+          id="dogName"
+          required
+          placeholder="Your dog's name"
+        >
+
+        <label>Service</label>
+        <select id="service" required>
+          <option value="">Choose a service</option>
+          <option>30-Minute Dog Walk</option>
+          <option>1-Hour Dog Walk</option>
+          <option>Dog Boarding</option>
+          <option>Day Boarding</option>
+        </select>
+
+        <label>Start date</label>
+        <input
+          type="date"
+          id="startDate"
+          required
+        >
+
+        <label>End date</label>
+        <input
+          type="date"
+          id="endDate"
+        >
+
+        <label>Anything we should know about your dog?</label>
+        <textarea
+          id="notes"
+          placeholder="Food, medication, personality, routines, etc."
+        ></textarea>
+
+        <button class="btn primary" type="submit">
+          Send Booking Request 🐾
+        </button>
+
+      </form>
+
+      <p class="booking-warning">
+        ⚠️ This is a booking request only.
+        Your booking is NOT confirmed until Tails & Trails
+        contacts you and confirms it.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+.booking-calendar {
+  max-width: 650px;
+  margin: 25px auto;
+  background: var(--white);
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid #eadfce;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-header h3 {
+  margin: 0;
+}
+
+.calendar-header button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: var(--light);
+  color: var(--brown);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.weekdays span {
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.calendar-date {
+  min-height: 45px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.available {
+  background: #dfe8d2;
+  color: #4d623b;
+  cursor: pointer;
+}
+
+.booked {
+  background: #ead0cd;
+  color: #8b4038;
+  cursor: not-allowed;
+}
+
+.past {
+  background: #eeeeee;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.empty-date {
+  background: transparent;
+}
+
+.calendar-key {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.booking-form {
+  max-width: 650px;
+  margin: 30px auto;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 22px;
+  border: 1px solid #eadfce;
+}
+
+.booking-form form {
+  display: grid;
+  gap: 10px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #eadfce;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.booking-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.booking-warning {
+  background: #fff4d6;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: .9rem;
+  margin-top: 20px;
+}
+.membership-card {
+  border: 2px solid var(--green);
+  position: relative;
+}
+
+.membership-card::before {
+  content: "POPULAR";
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  background: var(--green);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.per-month {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.membership-note {
+  font-size: 0.9rem;
+  background: var(--light);
+  padding: 12px;
+  border-radius: 12px;
+}
+</style>
+
+
+<script>
+
+let currentMonth = new Date();
+
+/*
+========================================
+🐾 YOUR BOOKED DATES
+========================================
+
+Add dates here when you accept a booking.
+
+Example:
+
+"2026-09-05",
+"2026-09-06",
+"2026-09-07"
+
+Those dates will appear RED on your calendar.
+*/
+
+const bookedDates = [
+
+  "2026-08-20",
+  "2026-08-25"
+
+];
+
+
+/*
+========================================
+📅 CALENDAR
+========================================
+*/
+
+function createCalendar() {
+
+  const calendar =
+    document.getElementById("calendar");
+
+  const monthYear =
+    document.getElementById("monthYear");
+
+  calendar.innerHTML = "";
+
+  const year =
+    currentMonth.getFullYear();
+
+  const month =
+    currentMonth.getMonth();
+
+  monthYear.textContent =
+    currentMonth.toLocaleDateString(
+      "en-AU",
+      {
+        month: "long",
+        year: "numeric"
+      }
+    );
+
+  const firstDay =
+    new Date(year, month, 1).getDay();
+
+  const daysInMonth =
+    new Date(year, month + 1, 0).getDate();
+
+  const today = new Date();
+
+  today.setHours(0, 0, 0, 0);
+
+
+  /*
+  Empty spaces before the
+  first day of the month
+  */
+
+  for (let i = 0; i < firstDay; i++) {
+
+    const empty =
+      document.createElement("div");
+
+    empty.className =
+      "calendar-date empty-date";
+
+    calendar.appendChild(empty);
+
+  }
+
+
+  /*
+  Create the days
+  */
+
+  for (
+    let day = 1;
+    day <= daysInMonth;
+    day++
+  ) {
+
+    const date =
+      new Date(year, month, day);
+
+    const button =
+      document.createElement("button");
+
+    button.type = "button";
+
+    button.className =
+      "calendar-date";
+
+    button.textContent = day;
+
+
+    const dateString =
+      year +
+      "-" +
+      String(month + 1).padStart(2, "0") +
+      "-" +
+      String(day).padStart(2, "0");
+
+
+    /*
+    BOOKED
+    */
+
+    if (
+      bookedDates.includes(dateString)
+    ) {
+
+      button.classList.add("booked");
+
+      button.disabled = true;
+
+    }
+
+
+    /*
+    PAST
+    */
+
+    else if (date < today) {
+
+      button.classList.add("past");
+
+      button.disabled = true;
+
+    }
+
+
+    /*
+    AVAILABLE
+    */
+
+    else {
+
+      button.classList.add("available");
+
+      button.onclick = function() {
+
+        document.getElementById(
+          "startDate"
+        ).value = dateString;
+
+      };
+
+    }
+
+    calendar.appendChild(button);
+
+  }
+
+}
+
+
+/*
+Change month
+*/
+
+function changeMonth(amount) {
+
+  currentMonth.setMonth(
+    currentMonth.getMonth() + amount
+  );
+
+  createCalendar();
+
+}
+
+
+/*
+========================================
+📩 SEND BOOKING REQUEST
+========================================
+*/
+
+function sendBooking(event) {
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById(
+      "customerName"
+    ).value;
+
+  const phone =
+    document.getElementById(
+      "customerPhone"
+    ).value;
+
+  const email =
+    document.getElementById(
+      "customerEmail"
+    ).value;
+
+  const dog =
+    document.getElementById(
+      "dogName"
+    ).value;
+
+  const service =
+    document.getElementById(
+      "service"
+    ).value;
+
+  const start =
+    document.getElementById(
+      "startDate"
+    ).value;
+
+  const end =
+    document.getElementById(
+      "endDate"
+    ).value;
+
+  const notes =
+    document.getElementById(
+      "notes"
+    ).value;
+
+
+  if (!start) {
+
+    alert(
+      "Please choose a start date."
+    );
+
+    return;
+
+  }
+
+
+  /*
+  Create the email
+  */
+
+  const subject =
+    "Tails & Trails Booking Request - " +
+    dog;
+
+
+  const message =
+
+    "NEW TAILS & TRAILS BOOKING REQUEST\n\n" +
+
+    "Customer: " + name + "\n" +
+
+    "Phone: " + phone + "\n" +
+
+    "Email: " + email + "\n\n" +
+
+    "Dog: " + dog + "\n" +
+
+    "Service: " + service + "\n" +
+
+    "Start date: " + start + "\n" +
+
+    "End date: " +
+    (end || "N/A") + "\n\n" +
+
+    "Notes:\n" +
+    (notes || "None") +
+    "\n\n" +
+
+    "IMPORTANT: This is only a booking request. " +
+    "The booking has NOT been confirmed.";
+
+
+  const mailto =
+
+    "mailto:tailsandtrails610@gmail.com" +
+
+    "?subject=" +
+    encodeURIComponent(subject) +
+
+    "&body=" +
+    encodeURIComponent(message);
+
+
+  window.location.href = mailto;
+
+}
+
+
+createCalendar();
+
+</script>
+<footer>
+  <strong>TAILS & TRAILS 🐾</strong>
+  <p>Dog Walking • Dog Boarding • Pet Care</p>
+  <p class="small">Happy dogs. Happy owners. Happy trails!</p>
+</footer>
+
+</body>
+</html>
